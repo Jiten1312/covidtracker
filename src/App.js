@@ -14,7 +14,6 @@ class App extends React.Component {
     async componentDidMount(){
         const fetchedData = await fetchData();
         this.setState({data: fetchedData}); 
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
 
     handleCountryChange = async (country) => {
@@ -28,11 +27,6 @@ class App extends React.Component {
             <div className={styles.container}>
                 <img className={styles.image} src={coronaImage} alt="COVID-19" />
                 <Cards data={data}/>
-                <ins className='adsbygoogle'
-                style={{ display: 'block' }}
-                data-ad-client='ca-pub-12121212'
-                data-ad-slot='12121212'
-                data-ad-format='auto' />
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
                 <Chart data={data} country={country} />
             </div>
